@@ -1,0 +1,332 @@
+
+                    <form id="FormOneWay" class="mt-5 grid gap-5  md:grid-cols-2	 " action="" onsubmit="handleSubmit(event)">
+                        <div class="w-full bg-white flex flex-row  items-center h-auto pl-5 relative">
+                            <label for="OneWayFrom" class="flex gap-3 w-3/12 xl:w-2/12">
+                                <img class="w-[20px]" src="assets/img/icon-from.svg" alt="">
+                                <p>From</p>
+                            </label>
+                            <input class="h-[45px] w-9/12 xl:w-10/12 pl-5 INPUTAIR" type="text" id="OneWayFrom" required  autocomplete="off" >
+                            <div  class="suggestions-box absolute left-0 top-[45px] bg-white border border-gray-300 max-h-60 overflow-auto z-10 md:w-full"></div>
+                        </div>
+                        
+                        <div class="w-full bg-white flex flex-row  items-center h-auto pl-5 relative">
+                            <label for="OnewayTo" class="flex gap-3 w-3/12 xl:w-2/12">
+                                <img class="w-[20px]" src="assets/img/icon-to.svg" alt="">
+                                <p>To</p>
+                            </label>
+
+                            <input class="h-[45px] w-9/12 xl:w-10/12 pl-5 INPUTAIR" type="text" id="OnewayTo" required autocomplete="off">
+                            <div  class="suggestions-box absolute left-0 top-[45px] bg-white border border-gray-300 max-h-60 overflow-auto z-10 md:w-full"></div>
+
+                            
+                        </div>
+                        <div class="w-full bg-white flex items-center h-[45px] pl-5 ">
+                            <div class="flex gap-2 items-center justify-start w-min">
+                                <img class="w-[20px] minus" src="assets/img/icon-menos.svg" alt="">
+                                <div class="flex items-center justify-start passenger-count">
+                                    <input id="OnewayPassergers"placeholder="0" value="1" min="1"
+                                        class="h-[45px] w-[35px] text-center roundTripPassengers" type="number" required>
+                                        <p class="singlePassenger">Passenger</p>
+                                        <p class="multiplePassengers hidden">Passengers</p>
+                                </div>
+                                <img class="w-[20px] plus" src="assets/img/icon-mas.svg" alt="">
+                            </div>
+                        </div>
+
+                      
+
+                        <div class="w-full bg-white flex items-center h-[45px] pl-5 ">
+
+                            <label for="OnewayDate" class="flex gap-3 w-8/12 xl:w-3/12 text-sm">
+                                <img class="w-[20px]" src="assets/img/icon-calendar.svg" alt="">
+                                <p class="text-[#949695]">Date and time</p>
+                            </label>
+                            <input placeholder="--/--/----" class="h-[45px] w-full " id="OnewayDate" type="datetime"
+                                name="OnewayDate" required>
+                        </div>
+                        <div class="w-full bg-white flex items-center h-[45px] px-5  gap-3 ">
+
+                            <img class="w-[20px]" src="assets/img/icon-jet.svg" alt="">
+
+                            <select class="w-full" name="" id="onewayjetsize" >
+                                <option value="">Jet size preference </option>
+                                <option value="Turbo Prop">Turbo Prop</option>
+                                <option value="Light Jet">Light Jet</option>
+                                <option value="Midsize Jet">Midsize Jet</option>
+                                <option value="Supermid Jet">Supermid Jet</option>
+                                <option value="Heavy Jet">Heavy Jet</option>
+                                <option value="Ultra Long Range">Ultra Long Range</option>
+                            </select>
+
+                        </div>
+                        <div class="bg-white flex items-center flex-col px-5  ">
+                            <div id="ContenedorContact" class="w-full flex justify-between mt-[11px] mb-[11px]">
+                                <div class="flex gap-3">
+                                    <img class="w-[20px]" src="assets/img/icon-person.svg" alt="">
+                                    <p>Contact info</p>
+                                </div>
+                                <img id="IconR" class="w-[10px] transition duration-350 ease-out"
+                                    src="assets/img/icon-arrow.svg" alt="">
+                            </div>
+                            <div id="InformacionR" class="w-full pt-0 pb-10  flex-col gap-5  hidden">
+                                <div class="flex flex-row gap-5">
+                                    <div class="input-data w-1/2">
+                                        <input id="NameContact" type="text" required name="NameContact" />
+                                        <div class="underline"></div>
+                                        <label for="NameContact">Name:</label>
+                                    </div>
+                                    <div class="input-data w-1/2">
+                                        <input id="LastNameContact" type="text" required  name="LastNameContact" />
+                                        <div class="underline"></div>
+                                        <label for="LastNameContact">Last name:</label>
+                                    </div>
+                                </div>
+                                <div class="input-data">
+                                    <input id="EmailContact" type="email" required  name="EmailContact" />
+                                    <div class="underline"></div>
+                                    <label for="EmailContact">E-mail:</label>
+                                </div>
+                                <div class="input-data">
+                                    <input id="PhoneContact" type="tel" required  name="PhoneContact" />
+                                    <div class="underline"></div>
+                                    <label for="PhoneContact">Phone number:</label>
+                                </div>
+                                <div class="input-data">
+                                    <input id="NoteContact" type="text" required name="NoteContact"  />
+                                    <div class="underline"></div>
+                                    <label for="NoteContact">Any requirement? Type a note:</label>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <button  id="ButtonFormOneWay" class="bg-white self-center py-2 px-10 font-bold justify-self-center md:col-span-2">
+                            SUBMIT
+                        </button>
+                    </form>
+
+                    <form id="FormRoundTrip" class="mt-5  gap-5 hidden md:grid-cols-2	" action="" onsubmit="handleSubmitRoundTrip(event)">
+                        <div class="w-full bg-white flex flex-row  items-center h-auto pl-5 relative">
+                            <label for="RoundTripFrom" class="flex gap-3 w-3/12 xl:w-2/12">
+                                <img class="w-[20px]" src="assets/img/icon-from.svg" alt="">
+                                <p>From</p>
+                            </label>
+                            <input class="h-[45px] w-9/12  xl:w-10/12 pl-5 INPUTAIR"  type="text" id="RoundTripFrom" required autocomplete="off" >
+                            <div  class="suggestions-box absolute left-0 top-[45px] bg-white border border-gray-300 max-h-60 overflow-auto z-10 md:w-full"></div>
+                        </div>
+                        <div class="w-full bg-white flex flex-row  items-center h-auto pl-5 relative">
+                            <label for="RoundTripTo" class="flex gap-3 w-3/12 xl:w-2/12">
+                                <img class="w-[20px]" src="assets/img/icon-to.svg" alt="">
+                                <p>To</p>
+                            </label>
+                            <input class="h-[45px] w-9/12  xl:w-10/12 pl-5 INPUTAIR" type="text" id="RoundTripTo" required  autocomplete="off">
+                            <div  class="suggestions-box absolute left-0 top-[45px] bg-white border border-gray-300 max-h-60 overflow-auto z-10 md:w-full"></div>
+                        </div>
+                
+                        <div class="w-full bg-white flex items-center h-[45px] pl-5">
+
+                            <label for="RoundTripDate" class="flex gap-3 w-9/12 xl:w-3/12 text-sm">
+                                <img class="w-[20px]" src="assets/img/icon-calendar.svg" alt="">
+                                <p class="text-[#949695]">Departure Date and time</p>
+                            </label>
+                            <input placeholder="--/--/----" class="h-[45px] w-full " id="RoundTripDate" type="datetime"
+                                name="RoundTripDate" required>
+
+
+                        </div>
+                        <div class="w-full bg-white flex items-center h-[45px] pl-5">
+
+
+                                <label for="RoundTripDateReturn" class="flex gap-3 w-9/12 xl:w-3/12 text-sm">
+                                    <img class="w-[20px]" src="assets/img/icon-calendar.svg" alt="">
+                                    <p class="text-[#949695]">Departure Date and time</p>
+                                </label>
+                                <input placeholder="--/--/----" class="h-[45px] w-full " id="RoundTripDateReturn" type="datetime"
+                                    name="RoundTripDateReturn" required>
+    
+
+                        </div>
+                        <div class="w-full bg-white flex items-center h-[45px] pl-5">
+                            <div class="flex gap-2 items-center justify-start w-min">
+                                <img class="w-[20px] minus-RoundTrip" src="assets/img/icon-menos.svg" alt="">
+                                <div class="flex items-center justify-start passenger-count">
+                                    <input id="RoundTripPassergers" placeholder="0" value="1" min="1"
+                                        class="h-[45px] w-[35px] text-center" type="number" required>
+                                    <p class="singlePassengerRoundTrip">Passenger</p>
+                                    <p class="multiplePassengersRoundTrip hidden">Passengers</p>
+                                </div>
+                                <img class="w-[20px] plus-RoundTrip" src="assets/img/icon-mas.svg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="w-full bg-white flex items-center h-[45px] px-5  gap-3">
+                            <img class="w-[20px]" src="assets/img/icon-jet.svg" alt="">
+                            <select class="w-full" name="" id="roundtripjetsize"  >
+                                <option value="">Jet size preference </option>
+                                <option value="Turbo Prop">Turbo Prop</option>
+                                <option value="Light Jet">Light Jet</option>
+                                <option value="Midsize Jet">Midsize Jet</option>
+                                <option value="Supermid Jet">Supermid Jet</option>
+                                <option value="Heavy Jet">Heavy Jet</option>
+                                <option value="Ultra Long Range">Ultra Long Range</option>
+                            </select>
+
+                        </div>
+                        <div class="bg-white flex items-center flex-col px-5  md:col-span-2 ">
+                            <div id="ContenedorContactRoundTrip"
+                                class="w-full flex justify-between mt-[11px] mb-[11px]">
+                                <div class="flex gap-3">
+                                    <img class="w-[20px]" src="assets/img/icon-person.svg" alt="">
+                                    <p>Contact info</p>
+                                </div>
+                                <img id="IconRRoundTrip" class="w-[10px] transition duration-350 ease-out"
+                                    src="assets/img/icon-arrow.svg" alt="">
+                            </div>
+                            <div id="InformacionRRoundTrip" class="w-full pt-0 pb-10  flex-col gap-5  hidden">
+                                <div class="flex flex-row gap-5">
+                                    <div class="input-data w-1/2">
+                                        <input id="NameContactRoundTrip" type="text" required
+                                            name="NameContactRoundTrip" />
+                                        <div class="underline"></div>
+                                        <label for="NameContactRoundTrip">Name:</label>
+                                    </div>
+                                    <div class="input-data w-1/2">
+                                        <input id="LastNameContactRoundTrip" type="text" required />
+                                        <div class="underline"></div>
+                                        <label for="LastNameContactRoundTrip">Last name:</label>
+                                    </div>
+                                </div>
+                                <div class="input-data">
+                                    <input id="EmailContactRoundTrip" type="text" required />
+                                    <div class="underline"></div>
+                                    <label for="EmailContactRoundTrip">E-mail:</label>
+                                </div>
+                                <div class="input-data">
+                                    <input id="PhoneContactRoundTrip" type="text" required />
+                                    <div class="underline"></div>
+                                    <label for="PhoneContactRoundTrip">Phone number:</label>
+                                </div>
+                                <div class="input-data">
+                                    <input id="NoteContact" type="text" required name="NoteContact"  />
+                                    <div class="underline"></div>
+                                    <label for="NoteContact">Any requirement? Type a note:</label>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <button id="ButtonFormRoundTrip" class="bg-white self-center py-2 px-10 font-bold justify-self-center md:col-span-2">
+                            SUBMIT
+                        </button>
+                    </form>
+
+                    <form id="FormMultyCity" class="mt-5  gap-5 hidden  md:grid-cols-2	" action="" onsubmit="handleSubmitMultyCity(event)">
+                        <div class="w-full bg-white flex flex-row  items-center h-auto pl-5 relative">
+                            <label for="MultyCityFrom" class="flex gap-3 w-3/12 xl:w-2/12">
+                                <img class="w-[20px]" src="assets/img/icon-from.svg" alt="">
+                                <p>From</p>
+                            </label>
+                            <input class="h-[45px] w-9/12  xl:w-10/12 pl-5 INPUTAIR" type="text" id="MultyCityFrom" required autocomplete="off" >
+
+                            <div  class="suggestions-box absolute left-0 top-[45px] bg-white border border-gray-300 max-h-60 overflow-auto z-10 md:w-full"></div>
+                        </div>
+                        <div class="w-full bg-white flex flex-row  items-center h-auto pl-5 relative">
+                            <label for="MultyCityTo" class="flex gap-3 w-3/12 xl:w-2/12">
+                                <img class="w-[20px]" src="assets/img/icon-to.svg" alt="">
+                                <p>To</p>
+                            </label>
+                            <input class="h-[45px] w-9/12  xl:w-10/12 pl-5 INPUTAIR" type="text" id="MultyCityTo" required  autocomplete="off" >
+                            <div  class="suggestions-box absolute left-0 top-[45px] bg-white border border-gray-300 max-h-60 overflow-auto z-10 md:w-full"></div>
+                        </div>
+                        <div class="w-full bg-white flex items-center h-[45px] pl-5">
+                            <div class="flex gap-2 items-center justify-start w-min">
+                                <img class="w-[20px] menos-MultyCity" src="assets/img/icon-menos.svg" alt="">
+                                <div class="flex items-center justify-start">
+                                    <input id="MultyCityPassergers" placeholder="0" value="1" min="1"
+                                        class="h-[45px] w-[35px] text-center" type="number" required>
+                                    <p class="singlePassengerMultyCity">Passenger</p>
+                                    <p class="multiplePassengersMultyCity hidden">Passengers</p>
+                                </div>
+                                <img class="w-[20px] plus-MultyCity" src="assets/img/icon-mas.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="w-full bg-white flex items-center h-[45px] pl-5">
+                            <label for="MultyCityDate" class="flex gap-3 w-8/12 xl:w-3/12 text-sm">
+                                <img class="w-[20px]" src="assets/img/icon-calendar.svg" alt="">
+                                <p class="text-[#949695]">Date and time</p>
+                            </label>
+                            <input placeholder="--/--/----" class="h-[45px] w-full " id="MultyCityDate" type="datetime"
+                                name="MultyCityDate" required>
+                            
+                          
+                        </div>
+                        <div class="w-full bg-white flex items-center h-[45px] px-5  gap-3">
+                            <img class="w-[20px]" src="assets/img/icon-jet.svg" alt="">
+                            <select class="w-full" name="" id="AvionTipe" >
+                                <option value="">Jet size preference </option>
+                                <option value="Turbo Prop">Turbo Prop</option>
+                                <option value="Light Jet">Light Jet</option>
+                                <option value="Midsize Jet">Midsize Jet</option>
+                                <option value="Supermid Jet">Supermid Jet</option>
+                                <option value="Heavy Jet">Heavy Jet</option>
+                                <option value="Ultra Long Range">Ultra Long Range</option>
+                            </select>
+                        </div>
+
+
+                        <div class="mt-5 gap-10 grid md:col-span-2  " id="AddInputs">
+
+                        </div>
+
+
+
+
+                        <div
+                            class="w-full bg-[#0F1D2B] flex items-center h-[45px] px-5  gap-3 text-white add-flight-button md:col-span-2">
+                            <img class="w-[20px]" src="assets/img/icon-avion.svg" alt="">
+                            <p>Add flight</p>
+                        </div>
+
+                        <div class="bg-white flex items-center flex-col px-5 md:col-span-2">
+                            <div id="ContenedorContactMultyCity"
+                                class="w-full flex justify-between mt-[11px] mb-[11px]">
+                                <div class="flex gap-3">
+                                    <img class="w-[20px]" src="assets/img/icon-person.svg" alt="">
+                                    <p>Contact info</p>
+                                </div>
+                                <img id="IconRMultyCity" class="w-[10px] transition duration-350 ease-out"
+                                    src="assets/img/icon-arrow.svg" alt="">
+                            </div>
+                            <div id="InformacionRMultyCity" class="w-full pt-0 pb-10  flex-col gap-5  hidden">
+                                <div class="flex flex-row gap-5 w-full">
+                                    <div class="input-data w-1/2">
+                                        <input id="NameContactMultyCity" type="text" required
+                                            name="NameContactMultyCity" />
+                                        <div class="underline"></div>
+                                        <label for="NameContactMultyCity">Name:</label>
+                                    </div>
+                                    <div class="input-data w-1/2">
+                                        <input id="LastNameContactMultyCity" type="text" required />
+                                        <div class="underline"></div>
+                                        <label for="LastNameContactMultyCity">Last name:</label>
+                                    </div>
+                                </div>
+                                <div class="input-data">
+                                    <input id="EmailContactMultyCity" type="text" required />
+                                    <div class="underline"></div>
+                                    <label for="EmailContactMultyCity">E-mail:</label>
+                                </div>
+                                <div class="input-data">
+                                    <input id="PhoneContactMultyCity" type="text" required />
+                                    <div class="underline"></div>
+                                    <label for="PhoneContactMultyCity">Phone number:</label>
+                                </div>
+                                <div class="input-data">
+                                    <input id="NoteContact" type="text" required name="NoteContact"  />
+                                    <div class="underline"></div>
+                                    <label for="NoteContact">Any requirement? Type a note:</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button  id="ButtonFormMultyCity" class="bg-white self-center py-2 px-10 font-bold justify-self-center md:col-span-2">
+                            SUBMIT
+                        </button>
+                    </form>
